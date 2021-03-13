@@ -1,0 +1,25 @@
+<!--pages/login/login.wxml-->
+<view>
+  <mp-toptips msg="{{error}}" type="error" show="{{error}}" delay="2000"></mp-toptips>
+  <view>
+    <image src="../images/no_login.png" class="no_login"></image>
+  </view>
+  <view >
+    <image src="../images/user.png" class="user" ></image>
+  </view>
+  <view>
+     <input type="text" placeholder="学工号" class="input" bindinput="setIdInput"></input>
+  </view>
+  <view >
+    <image src="../images/lock.png" class="lock" ></image>
+  </view>
+  <view>
+    <input placeholder="登录密码" class="keyword" bindinput="setPassInput" type="{{inputType}}"></input>
+        <!-- 小眼睛图标 -->
+        <image src="../images/no_button.png" bindtap="seeTap" wx:if="{{show_pass}}" class="ny_button"></image>
+        <image src="../images/yes_button.png" bindtap="seeTap" wx:else class="ny_button"></image>
+  </view>
+  <view style="margin-top:250rpx">
+    <button  class="button" style="width:650rpx;" bindtap="clickLogin">登录</button>
+  </view>
+</view>
