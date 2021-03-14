@@ -20,6 +20,9 @@
         <image src="../images/yes_button.png" bindtap="seeTap" wx:else class="ny_button"></image>
   </view>
   <view style="margin-top:250rpx">
+    <!-- 放置登录错误信息提示 -->
+    <text class="remindError">{{errorMsg}}</text>
+    <!-- 登录按钮 -->
     <button  class="button" style="width:650rpx;" bindtap="clickLogin">登录</button>
   </view>
 </view>
