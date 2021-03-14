@@ -77,5 +77,14 @@
   background-color: #1e264b;
   color:white;
   width:650rpx;
+  margin-top: 50rpx;
+}
+
+.remindError{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color: red;
   margin-top: 300rpx;
+  height: 40rpx;
 }

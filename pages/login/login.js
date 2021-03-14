@@ -13,7 +13,7 @@ Page({
     // 是否显示密码
     show_pass:false,
     //错误提示
-    error: ''
+    errorMsg: ''
   },
 
   /**
@@ -51,29 +51,36 @@ Page({
     console.log("click")
     console.log(this.data.pass)
     console.log(this.data.id)
-    this.setData({
+   /* this.setData({
       error: '这是一个错误提示'
-  })
-    wx.request({
-      url:'', 
-      header: { 'Content-Type': 'application/json;charset=utf-8' },
-      data: {
-          id: this.data.id,
-          pass: this.data.pass,
-       },
-       method: 'post',
-       success: function (res) {
-            console.log("成功");
-            console.log(res);
-            if(res.data.data == 1){//跳转到首页
+  })*/
+    if(this.data.pass==''||this.data.id==''){
+      this.setData({
+        errorMsg: '账号或密码不能为空！'
+      })
+    }
+    else{
+      wx.request({
+        url:'', 
+        header: { 'Content-Type': 'application/json;charset=utf-8' },
+        data: {
+            id: this.data.id,
+            pass: this.data.pass,
+        },
+        method: 'post',
+        success: function (res) {
+              console.log("成功");
+              console.log(res);
+              if(res.data.data == 1){//跳转到首页
 
+              }
+              else{
+                that.setData({
+                  errorMsg: '学工号与密码不匹配'
+                })
+              }
             }
-            else{
-              that.setData({
-                error: '这是一个错误提示'
-            })
-            }
-       }
-  })
+        })
+     }
   }
 })
