@@ -1,0 +1,2 @@
+<!--pages/user/user.wxml-->
+<table class="basic-table" rowKey="key" scrollViewHeight="auto" columns="{{tableColumns}}" dataList="{{dataList}}" getListLoading="{{getListLoading}}" showTipImage="{{dataList.length===0&!getListLoading}}" />

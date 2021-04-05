@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "table":"../../miniprogram/public/components/public/table/table"
+  }
+}
