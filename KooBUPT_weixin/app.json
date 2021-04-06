@@ -1,9 +1,12 @@
 {
   "pages": [
-    "pages/menuPage/menuPage",
     "pages/login/login",
+    "pages/menuPage/menuPage",
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/menu/menu",
+    "pages/appointment/appointment",
+    "pages/user/user"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -12,5 +15,20 @@
     "navigationBarTextStyle": "black"
   },
   "style": "v2",
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+
+
+  "tabBar": {
+    "position":"top",
+    "selectedColor":"green",
+    "list": [{
+      "pagePath": "pages/appointment/appointment",
+      "text": "预约机房"
+    },
+      {
+        "pagePath": "pages/user/user",
+        "text": "我的预约"
+      }
+    ]
+  }
 }

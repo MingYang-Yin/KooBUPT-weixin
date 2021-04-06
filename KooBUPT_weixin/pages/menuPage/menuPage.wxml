@@ -18,5 +18,13 @@
 <!--搜索-->
 <view hidden="{{currentTab!==1}}">
   tab_02
+  <block  wx:for="{{listData}}" wx:key="{{code}}">
+      <view >
+        <view >{{item.termNo}}</view>
+        <view >{{item.prinAmt}}</view>
+        <view >{{item.intAmt}}</view>
+        <view >{{item.totAmt}}</view>
+      </view>
+    </block>
 </view>
  

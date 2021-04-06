@@ -6,8 +6,10 @@ Page({
    */
   data: {
     navbar: ['首页', '我'],
-    currentTab: 0
+    currentTab: 0,
+    listData:[],
   },
+
 
   /**
    * 生命周期函数--监听页面加载
@@ -20,7 +22,15 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    var that = this
+    //加载list长度
+    console.log(that.data.listData.length)
+    for (var i=1;i<=100;i++){
+       var obj = { "termNo": i, "prinAmt": 1000, "intAmt": 1000, "totAmt": 2000 }
+       that.data.listData.push(obj);
+      }
+    //将list值展示
+    that.setData({listData : that.data.listData})
   },
 
   /**

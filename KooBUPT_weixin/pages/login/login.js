@@ -48,9 +48,9 @@ Page({
 
   clickLogin:function(){
     var that = this
-    console.log("click")
+    /*console.log("click")
     console.log(this.data.pass)
-    console.log(this.data.id)
+    console.log(this.data.id)*/
    /* this.setData({
       error: '这是一个错误提示'
   })*/
@@ -60,19 +60,41 @@ Page({
       })
     }
     else{
+      wx.showToast({
+        title: '登录成功',
+        icon: 'success',
+        duration: 2000,
+        success(){
+          setTimeout(function(){
+            wx.switchTab({
+              url: '../appointment/appointment'
+            })
+          },1000)
+        }
+      })
+      
+      /*wx.switchTab({
+        url: '../appointment/appointment'
+      })*/
+      //为了调试方便将登陆代码注掉
+      /*
       wx.request({
-        url:'', 
+        url:'http://localhost:8080/user/login', 
         header: { 'Content-Type': 'application/json;charset=utf-8' },
         data: {
-            id: this.data.id,
-            pass: this.data.pass,
+            input: this.data.id,
+            password: this.data.pass,
         },
         method: 'post',
         success: function (res) {
-              console.log("成功");
-              console.log(res);
-              if(res.data.data == 1){//跳转到首页
-
+              if(res.data == "1"){//跳转到首页
+                that.setData({
+                  errorMsg: '登录成功'
+                })
+                getAPP().globalData.userID = this.data.id;
+                wx.switchTab({
+                  url: '../appointment/appointment'
+                })
               }
               else{
                 that.setData({
@@ -80,7 +102,7 @@ Page({
                 })
               }
             }
-        })
+        })*/
      }
   }
 })
